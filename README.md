@@ -28,5 +28,9 @@ Instead of using all the numbers to indicate the exact minute, we opted for a si
 These choices reflect the most common way of telling time in Italian, despite using numbers being perfectly acceptable in the aforementioned cases. It is worth noting that these expressions are not pan-Italian, but rather based on the Tuscan variant of Italian.
 
 ### Mandarin Chinese
+The logic of telling time in Chinese usually describes the current time by hour and minute. In Chinese, the following information is usually included:
+The current hour: usually expressed in 12-hour format, such as “shang wu 9 dian”(9:00 am) or "xia wu 3 dian”(3:00 pm).
+Current minutes: Minutes are usually expressed in Arabic numerals, followed by “fen”(minute), e.g. "9 dian 15 fen”(9:15) or "3 dian 45 fen”(3:45). When it’s on the hour, “zheng”(o’clock) will be added after the hour, e.g. “9 dian zheng”(9:00 o’clock).
+Some additional information:  "xian zai shi"(the current time is) to introduce a description of the time. “Shang wu”(AM) and “xia wu”(PM): usually it is indicated whether it is morning or afternoon, to distinguish different times of the day.
 
 ## GDPR Compliance
