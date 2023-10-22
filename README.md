@@ -23,6 +23,8 @@ for example half past 1 is in Dutch "*half 2*".
 Another thing that is remarkable is the use of 5 and 10 minutes after an half hour. In Dutch it is normal to use a phrase like: "*Het is 10 over half 4*". The literal translation in English would be: 'It is 10 past half past 3' (It is 20 to 4). This is also possible for 5 and 10 minutes before an half hour, for example: "*Het is 5 voor half 2*", the literal translation would be: 'It is 5 to half past 1' (It is 25 past 1). 
 After a round hour, the sentences in English and Dutch are quite similar: "*Het is 5 over 3*", 'It is 5 past 3'. 
 Instead of using the word 'o'clock', "*uur*" is used which means 'hour'. 
+Differentiations between am and pm are mostly done by using "*'s ochtends*" (morning), "*'s middags*" (afternoon), "*'s avonds*" (evening) and "*'s nachts*". For example: 'It is 12 pm' would be "*Het is 12 uur 's nachts.*". 
+A small remark, the "*'s*" is short for "*des*", which was the second case (genetive) in Dutch. This is not used anymore. 
 
 ### American English
 
