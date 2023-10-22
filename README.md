@@ -17,7 +17,7 @@
 ## Linguistic Rules for Telling Time
 ### Dutch
 
-### English
+### American English
 
 ### Italian
 The Italian language has a telling time system similar to English, telling first the hours and then the minutes, and having expressions to indicate the half and the quarters of the hours. The former is expressed through the word “*mezzo*” or “*mezza*”, depending on the variety, while the former is translated to “*un quarto*”. Hours are usually indicated using simple numbers, except for 01:00 a.m./p.m. for which is not used the standard form of the cardinal number "*uno*", but the female form “*una*”. Additionally, we decided not to use the number to indicate 12:00 a.m./p.m., but the more spread expressions “*mezzogiorno*” (midday) and “*mezzanotte*” (midnight).
