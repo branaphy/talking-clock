@@ -8,8 +8,8 @@ from helpers import get_current_time, play_audio
 def speak_time_in_english():
     hour, minute = get_current_time()
 
-    hour_audio_path = f"EnglishAudio/hour_{int(hour)}.mp3"
-    minute_audio_path = f"EnglishAudio/minute_{minute}.mp3"
+    hour_audio_path = f"EnglishAudio/hour_{int(hour)}.wav"
+    minute_audio_path = f"EnglishAudio/minute_{minute}.wav"
 
     play_audio(hour_audio_path)
     play_audio(minute_audio_path)
