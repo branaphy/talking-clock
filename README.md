@@ -25,7 +25,7 @@ After a round hour, the sentences in English and Dutch are quite similar: "*Het 
 Instead of using the word 'o'clock', "*uur*" is used which means 'hour'. 
 Differentiations between am and pm are mostly done by using "*'s ochtends*" (morning), "*'s middags*" (afternoon), "*'s avonds*" (evening) and "*'s nachts*" (night). 
 The use of these is a bit arbitrary, some people think 4 am is morning and some people will say it is night. There is a bit of a grey area between 3 am and 5 am, there is not really a right or wrong here. The rest is quite strict, the morning is used until 12 pm, the afternoon is used until 6 pm, the evening is used until 12 am and the night is from 12 am. For example: 'It is 12 am' would be "*Het is 12 uur 's nachts.*". 
-A small remark, the "*'s*" is short for "*des*", which was the second case (genetive) in Dutch. This is not used anymore. 
+A small remark, the "*'s*" is short for "*des*", which was the second case (genetive) in Dutch. The second case is barely used anymore, but the "*'s*" is still used. 
 
 ### American English
 
