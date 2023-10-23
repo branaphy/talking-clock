@@ -37,6 +37,8 @@ The 12-hour format is commonly used in Italy, but in formal contexts and some re
 Instead of using all the numbers to indicate the exact minute, we opted for a simplified approach to telling time by only indicating it every five minutes.
 These choices reflect the most common way of telling time in Italian, despite using numbers being perfectly acceptable in the aforementioned cases. It is worth noting that these expressions are not pan-Italian, but rather based on the Tuscan variant of Italian.
 
+Explain the logic 3<m<7 = 05 and 8<m<2 = 00
+
 ### Mandarin Chinese
 The logic of telling time in Chinese usually describes the current time by hour and minute. In Chinese, the following information is usually included:
 The current hour: usually expressed in 12-hour format, such as “shang wu 9 dian”(9:00 am) or "xia wu 3 dian”(3:00 pm).
