@@ -22,11 +22,13 @@ def speak_time_in_italian():
     minute_prosody = "falling" if (0 <= int(minute) <= 27 or 58 <= int(minute) <= 59) else "rising"
     #Select the closest multiple of 5 for the minutes
     minute = round(int(minute) / 5) * 5
+    minute_prosody = "falling" if minute == 30 else "rising"
     #Select the audio file for minutes
-    minute_audio = f"ItalianAudio/{minute}_{minute_prosody}_it.wav"
+    minute_audio = f"ItalianAudio/{minute}_{minute_prosody}_it.wav" if minute < 35 else f"ItalianAudio/{(60-minute)}_{minute_prosody}_it.wav"
     
     #Select then the prosody for the hour
     hour_prosody = "falling" if minute_prosody == "rising" else "rising"
+    hour = int(hour) + 1 if hour_prosody == "falling" else hour
     #To select the hour, we simply select the current hour, except for
     #midnight and midday, in which we take into account if the time is am or pm.
     hour_audio = f"ItalianAudio/12{ampm.lower()}_{hour_prosody}_it.wav" if int(hour) == 12 else f"ItalianAudio/{hour}_{hour_prosody}_it.wav"
