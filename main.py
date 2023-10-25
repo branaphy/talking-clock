@@ -93,7 +93,8 @@ english_button.pack(pady=20)
 # mandarin_button = tk.Button(root, text='Speak Time (Mandarin)', command=speak_time_in_mandarin)
 # mandarin_button.pack()
 
-italian_button = tk.Button(root, text='Speak Time (Italian)', command=speak_time_in_italian)
+ita_icon = PhotoImage(file = r"ita_icon.png")
+italian_button = tk.Button(root, text='Speak Time (Italian)', image=ita_icon, command=speak_time_in_italian)
 italian_button.pack()
 
 # dutch_button = tk.Button(root, text='Speak Time (Dutch)', command=speak_time_in_dutch)
