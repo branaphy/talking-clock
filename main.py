@@ -4,7 +4,7 @@
 
 import tkinter as tk
 from English import speak_time_in_english
-# from Mandarin import speak_time_in_mandarin
+from Mandarin import speak_time_in_mandarin
 from Italian import speak_time_in_italian
 from German import speak_time_in_german
 from Latin import speak_time_in_latin
@@ -131,8 +131,10 @@ english_button = tk.Button(root, image=eng_icon, height=25,
 english_button.image = eng_icon
 english_button.pack(pady=20)
 
-# mandarin_button = tk.Button(root, text='Speak Time (Mandarin)', command=speak_time_in_mandarin)
-# mandarin_button.pack()
+chn_icon = tk.PhotoImage(file="chn_icon.png")
+mandarin_button = tk.Button(root, image=chn_icon, height=25,
+                           width=100, command=speak_time_in_mandarin)
+mandarin_button.pack(pady=20)
 
 ita_icon = tk.PhotoImage(file = r"ita_icon.gif")
 italian_button = tk.Button(root, image=ita_icon, borderwidth=0, height= 25,
