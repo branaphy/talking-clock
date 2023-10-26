@@ -22,13 +22,12 @@
 In Dutch, the use of 'half past' is a bit different compared to English and Italian. The use of "*half*" is actually the next hour minus half an hour, 
 for example half past 1 is in Dutch "*half 2*".
 'A quarter to' and 'a quarter past' are used the same compared to English, a quarter past 1, is "*kwart over 1*". 
-Another thing that is remarkable is the use of 5 and 10 minutes after an half hour. In Dutch it is normal to use a phrase like: "*Het is 10 over half 4*". The literal translation in English would be: 'It is 10 past half past 3' (It is 20 to 4). This is also possible for 5 and 10 minutes before an half hour, for example: "*Het is 5 voor half 2*", the literal translation would be: 'It is 5 to half past 1' (It is 25 past 1). 
-After a round hour, the sentences in English and Dutch are quite similar: "*Het is 5 over 3*", 'It is 5 past 3'. 
-Instead of using the word 'o'clock', "*uur*" is used which means 'hour'. 
+The minutes from the whole hour or the half hour are substracted by the minutes of the current time. Before an whole hour it would be like this: "*Het is 8 voor 9*", which can be phrased like: 'It is 8 to 9' (It is 8:52). This can also be used before or after an half hour: "*Het is 10 over half 4*". The literal translation in English would be: 'It is 10 past half past 3' (It is 3:40). And before an half hour, for example: "*Het is 5 voor half 2*", the literal translation would be: 'It is 5 to half past 1' (It is 1:25). Usually, a maximum of 10 minutes can be used, if it is 3:12, it would be rounded to 3:15. 
+After a round hour, the sentences in English and Dutch are quite similar: "*Het is 5 over 3*", 'It is 5 past 3'. Instead of using the word 'o'clock', "*uur*" is used which means 'hour'. 
 Differentiations between am and pm are mostly done by using "*'s ochtends*" (morning), "*'s middags*" (afternoon), "*'s avonds*" (evening) and "*'s nachts*" (night). 
 The use of these is a bit arbitrary, some people think 4 am is morning and some people will say it is night. There is a bit of a grey area between 3 am and 5 am, there is not really a right or wrong here. The rest is quite strict, the morning is used until 12 pm, the afternoon is used until 6 pm, the evening is used until 12 am and the night is from 12 am. For example: 'It is 12 am' would be "*Het is 12 uur 's nachts.*". 
 A small remark, the "*'s*" is short for "*des*", which was the second case (genetive) in Dutch. The second case is barely used anymore, but the "*'s*" is still used. 
-!! rounding the time from 24 to 25, but 5 voor half 
+
 
 ### American English
 
