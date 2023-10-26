@@ -96,8 +96,18 @@ english_button.pack(pady=20)
 # mandarin_button.pack()
 
 ita_icon = tk.PhotoImage(file = r"ita_icon.gif")
-italian_button = tk.Button(root, image=ita_icon, height= 25, width=100, command=speak_time_in_italian)
+italian_button = tk.Button(root, image=ita_icon, borderwidth=0, height= 25, width=100, command=speak_time_in_italian)
 italian_button.pack(pady=20)
+
+de_icon = tk.PhotoImage(file="de_icon.gif")
+german_button = tk.Button(root, image=de_icon, borderwidth=0, height=25, width=100, command=speak_time_in_german)
+german_button.image = de_icon
+german_button.pack(pady=20)
+
+lat_icon = tk.PhotoImage(file="lat_icon.gif")
+latin_button = tk.Button(root, image=lat_icon, height=25, width=100, command=speak_time_in_latin)
+latin_button.image = lat_icon
+latin_button.pack(pady=20)
 
 # dutch_button = tk.Button(root, text='Speak Time (Dutch)', command=speak_time_in_dutch)
 # dutch_button.pack()
