@@ -19,8 +19,8 @@ def speak_time_in_dutch():
     This function does not take a value; it plays the audio to speak the time
     '''
 
-    hour, minute, am_or_pm = get_current_time()
-    #hour, minute, am_or_pm = ["11","42","pm"]
+   # hour, minute, am_or_pm = get_current_time()
+    hour, minute, am_or_pm = ["11","59","pm"]
 
     #create an empty list
     audio_files = []
@@ -58,7 +58,7 @@ def speak_time_in_dutch():
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
 
         elif 48 <= int(minute) <=59:
-            audio_files.append(os.path.join(audio_folder, f"{60 - int(minute) : 02d}_rising_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, f"{60-int(minute) :02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "to_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
 
@@ -90,8 +90,8 @@ def speak_time_in_dutch():
             pygame.time.Clock().tick(10)
 
 
-#if __name__ == '__main__':
-#    speak_time_in_dutch()
+if __name__ == '__main__':
+   speak_time_in_dutch()
 
 
 
