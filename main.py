@@ -15,7 +15,7 @@ hour_colors = ['#FF0000', '#FF7F00', '#FFFF00', '#7FFF00', '#00FF00', '#00FF7F',
 
 root = tk.Tk()
 root.title("Multilingual Talking Clock")
-root.geometry(""700x650+300+120")
+root.geometry("700x650+300+120")
 
 
 # define function to fetch current hour and minute, update display time and bg color according to time
