@@ -11,6 +11,7 @@ def speak_time_in_latin():
     The speak_time_in_latin() function takes no arguments.
     It generates a string that express the current time according 
     to the local time.
+    If an error occurs, it will say so.
 
     Returns
     -------
@@ -21,8 +22,9 @@ def speak_time_in_latin():
     '''
     hour, minute, ampm = get_current_time()
     
-    # Define Latin numbers to express hours
-    latin_numbers = ["unus", "duo", "tres", "quattuor", "quinque", "sex", 
+    try:
+        # Define Latin numbers to express hours
+        latin_numbers = ["unus", "duo", "tres", "quattuor", "quinque", "sex", 
                      "septem", "octo", "novem", "decem", "undecim", "duodecim",
                      "tredecim","quattuordecim", "quindecim", "sedecim",
                      "septendecim", "octodecim", "novemdecim", "viginti", 
@@ -38,21 +40,29 @@ def speak_time_in_latin():
                       "quinquaginta duo", "quinquaginta tres", "quinquaginta quattuor", 
                      "quinquaginta quinque", "quinquaginta sex", "quinquaginta septem", 
                      "quinquaginta octo", "quinquaginta novem"]
-    # Convert the current time to Latin and select the current time
-    latin_hour = latin_numbers[int(hour)-1]
-    if minute == 0:
-        latin_time = f"Hora est {latin_hour}."
-    else:
-        latin_minute = latin_numbers[int(minute)-1]
-        latin_time = f"Hora est {latin_hour} et {latin_minute} minuta."
+        # Convert the current time to Latin and select the current time
+        latin_hour = latin_numbers[int(hour)-1]
+        if minute == 0:
+            latin_time = f"Hora est {latin_hour}."
+        else:
+            latin_minute = latin_numbers[int(minute)-1]
+            latin_time = f"Hora est {latin_hour} et {latin_minute} minuta."
 
-    # Create a tts object in Latin
-    latin_tts = gTTS(text=latin_time, lang='la')
-    # Save the temporary file to play it with pydub
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
-    file_path = temp_file.name
-    temp_file.close()
-    latin_tts.save(file_path)
+        # Create a tts object in Latin
+        latin_tts = gTTS(text=latin_time, lang='la')
+        # Save the temporary file to play it with pygame
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+        file_path = temp_file.name
+        temp_file.close()
+        latin_tts.save(file_path)
     
-    #Play the audio
-    play_audio(file_path)
+        play_audio(file_path)
+    except:
+        #It will say "I'm sorry, an error occured" in Latin
+        latin_tts = gTTS(text="Doleo, sed error occurrit", lang='la')
+        temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".mp3")
+        file_path = temp_file.name
+        temp_file.close()
+        latin_tts.save(file_path)
+    
+        play_audio(file_path)
