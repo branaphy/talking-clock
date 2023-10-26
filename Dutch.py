@@ -1,6 +1,4 @@
 # This code contains logic related to the linguistic rules of telling time in Dutch.
-
-# This code contains logic related to the linguistic rules of telling time in Dutch.
 import os
 
 import pygame
@@ -21,8 +19,8 @@ def speak_time_in_dutch():
     This function does not take a value; it plays the audio to speak the time
     '''
 
-    #hour, minute, am_or_pm = get_current_time()
-    hour, minute, am_or_pm = ["06","20","pm"]
+    hour, minute, am_or_pm = get_current_time()
+    #hour, minute, am_or_pm = ["06","20","pm"]
     #create an empty list
     audio_files = []
 
@@ -45,18 +43,34 @@ def speak_time_in_dutch():
             audio_files.append(os.path.join(audio_folder, "quarter_to_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
         elif 20 <= int(minute) < 30:
-            audio_files.append(os.path.join(audio_folder, f"{30-int(minute)}_rising_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, f"{30-int(minute):02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "to_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "half_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
 
         elif 30 < int(minute) <= 40:
-            audio_files.append(os.path.join(audio_folder, f"{30+int(minute)}_rising_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, f"{30+int(minute): 02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "past_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "half_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
-        #elif
 
+       # elif 41 <= int(minute) <44:
+
+       # elif 46 <= int(minute) <=49:
+
+        elif 50 <= int(minute) <=59:
+            audio_files.append(os.path.join(audio_folder, f"{60 - int(minute) : 02d}_rising_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, "to_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
+
+        elif 1 <= int(minute) <=9:
+            audio_files.append(os.path.join(audio_folder, f"{0 + int(minute) :02d}_rising_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, "past_nl.wav"))
+            audio_files.append(os.path.join(audio_folder, f"{hour}_falling_nl.wav"))
+
+       # elif 11 <= int(minute) <=14:
+
+       # elif 16 <= int(minute) <=19:
 
         #elif m
 
@@ -83,8 +97,3 @@ def speak_time_in_dutch():
 
 
 
-
-
-
-
-# Authors: Alice Vanni, Amber Lankheet, Brandi Hongell, Jingxuan Yue, Wenjun Meng
