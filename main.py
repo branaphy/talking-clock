@@ -14,12 +14,23 @@ hour_colors = ['#FF0000', '#FF7F00', '#FFFF00', '#7FFF00', '#00FF00', '#00FF7F',
                '#00FFFF', '#007FFF', '#0000FF', '#7F00FF', '#FF00FF', '#FF007F']
 
 root = tk.Tk()
-root.title("Talking Clock")
-root.geometry("400x300+300+120")
+root.title("Multilingual Talking Clock")
+root.geometry(""700x650+300+120")
 
 
 # define function to fetch current hour and minute, update display time and bg color according to time
 def time():
+    '''
+    This function fetches the current hour and minute and displays time and background
+    colour according to the time fetched.
+    It takes no arguments.
+
+    Returns
+    -------
+    None.
+    
+    This function does not return a value, it configures the GUI.
+    '''
     hour, minute, am_or_pm = get_current_time()
 
     # Determine the start and end colors
@@ -41,6 +52,16 @@ def time():
 
 
 def update_weather():
+    '''
+    This function takes no arguments, it retrieves the current weather in Leeuwarden (NL) using the Weather API.
+    It gets updated every 10 minutes.
+
+    Returns
+    -------
+    None.
+    
+    This function does not return a value, it has consequences on the GUI.
+    '''
     city = "Leeuwarden"
     weather = get_weather(city, "584eb395bcf45a34c7ec7511b7d82c25")
     weather_label.config(text=weather)
@@ -56,6 +77,16 @@ time_label.pack(expand=True, anchor='center')
 
 
 def display_random_time():
+    '''
+    This function takes no argument; it generates a random time string to be displayed in the GUI;
+    based on the generated string, it also changes the colour of the background.
+
+    Returns
+    -------
+    None.
+    
+    This function does not return a value, it has effects on the GUI.
+    '''
     time_str = random_time()  # Get a random time string
     time_label.config(text=time_str)  # Display the random time
 
