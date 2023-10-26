@@ -20,7 +20,8 @@ def speak_time_in_dutch():
     '''
 
     hour, minute, am_or_pm = get_current_time()
-    #hour, minute, am_or_pm = ["06","20","pm"]
+    #hour, minute, am_or_pm = ["11","42","pm"]
+
     #create an empty list
     audio_files = []
 
@@ -30,47 +31,44 @@ def speak_time_in_dutch():
     #Beginning of the sentence, it is...
     audio_files.append(os.path.join(audio_folder, "it_is_nl.wav"))
 
-    #
+    #then looking at the minutes and choosing the right file.
     if minute != '00':
-        if minute == '15':
+        if 13 <= int(minute) <=17:
             audio_files.append(os.path.join(audio_folder, "quarter_past_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{hour}_falling_nl.wav"))
-        elif minute == '30':
+        elif int(minute) == '30':
             audio_files.append(os.path.join(audio_folder, "half_nl.wav"))
-            #adding +1 because the telling time is plus the next our.
+            #adding +1 because the telling time is plus the next hour, also two digits are required in the audio file
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
-        elif minute == '45':
+        elif 43<= int(minute) <=47:
             audio_files.append(os.path.join(audio_folder, "quarter_to_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
-        elif 20 <= int(minute) < 30:
+
+        #between the 20 and 30 minutes, we substracted 30 minutes by the minutes on the clock
+        elif 18 <= int(minute) < 30:
             audio_files.append(os.path.join(audio_folder, f"{30-int(minute):02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "to_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "half_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
 
-        elif 30 < int(minute) <= 40:
-            audio_files.append(os.path.join(audio_folder, f"{30+int(minute): 02d}_rising_nl.wav"))
+        elif 30 < int(minute) <= 42:
+            audio_files.append(os.path.join(audio_folder, f"{int(minute)-30:02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "past_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "half_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
 
-       # elif 41 <= int(minute) <44:
-
-       # elif 46 <= int(minute) <=49:
-
-        elif 50 <= int(minute) <=59:
+        elif 48 <= int(minute) <=59:
             audio_files.append(os.path.join(audio_folder, f"{60 - int(minute) : 02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "to_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
 
-        elif 1 <= int(minute) <=9:
+        elif 1 <= int(minute) <=12:
             audio_files.append(os.path.join(audio_folder, f"{0 + int(minute) :02d}_rising_nl.wav"))
             audio_files.append(os.path.join(audio_folder, "past_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{hour}_falling_nl.wav"))
 
-       # elif 11 <= int(minute) <=14:
 
-       # elif 16 <= int(minute) <=19:
+
 
         #elif m
 
@@ -93,7 +91,7 @@ def speak_time_in_dutch():
 
 
 #if __name__ == '__main__':
- #   speak_time_in_dutch()
+#    speak_time_in_dutch()
 
 
 
