@@ -13,6 +13,8 @@
 - English
 - Italian
 - Mandarin Chinese
+- German
+- Latin
 
 ## Linguistic Rules for Telling Time
 ### Dutch
@@ -43,5 +45,8 @@ The logic of telling time in Chinese usually describes the current time by hour 
 The current hour: usually expressed in 12-hour format, such as “shang wu 9 dian”(9:00 am) or "xia wu 3 dian”(3:00 pm).
 Current minutes: Minutes are usually expressed in Arabic numerals, followed by “fen”(minute), e.g. "9 dian 15 fen”(9:15) or "3 dian 45 fen”(3:45). When it’s on the hour, “zheng”(o’clock) will be added after the hour, e.g. “9 dian zheng”(9:00 o’clock).
 Some additional information:  "xian zai shi"(the current time is) to introduce a description of the time. “Shang wu”(AM) and “xia wu”(PM): usually it is indicated whether it is morning or afternoon, to distinguish different times of the day.
+
+### Latin and German
+For both Latin and German we used the gTTS package and we opted for a very simple way of telling time: lit. "It is" + hour + "hour and" + minutes + "minutes". It translates directly in German to "Es ist" + hour + "Uhr" + minutes + "minuten", while for Latin the translation is slightly more complex since the syntactic structure of the Latin sentence is reversed. The resulting sentence will be "Hora est" + hour (expressed using cardinal numbers) + "et" + minutes (expressed using cardinal numbers) + "minuta". The literal translation would be: "The hour is ...th and ...th minutes".
 
 ## GDPR Compliance
