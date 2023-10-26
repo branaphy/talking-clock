@@ -5,7 +5,9 @@
 import tkinter as tk
 from English import speak_time_in_english
 # from Mandarin import speak_time_in_mandarin
-# from Italian import speak_time_in_italian
+from Italian import speak_time_in_italian
+from German import speak_time_in_german
+from Latin import speak_time_in_latin
 # from Dutch import speak_time_in_dutch
 from Weather import get_weather
 from helpers import get_current_time, compute_gradient_color, random_time
