@@ -41,7 +41,7 @@ def speak_time_in_italian():
     #Select the linking word according to minutes and hour
     #The sequence in which hour and minute will be told is also selected
     #here based on minute prosody
-        if minute == 0:
+        if minute == "00":
             audio_sequence = (hour_audio.replace("rising", "falling"))
         elif minute_prosody == "rising":
             linking_audio = "ItalianAudio/a.wav" if int(hour) == 12\
