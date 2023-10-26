@@ -21,8 +21,8 @@ root.geometry(""700x650+300+120")
 # define function to fetch current hour and minute, update display time and bg color according to time
 def time():
     '''
-    This function fetches the current hour and minute and displays time and background
-    colour according to the time fetched.
+    This function fetches the current hour and minute and displays 
+    time and background colour according to the time fetched.
     It takes no arguments.
 
     Returns
@@ -53,7 +53,8 @@ def time():
 
 def update_weather():
     '''
-    This function takes no arguments, it retrieves the current weather in Leeuwarden (NL) using the Weather API.
+    This function takes no arguments, it retrieves the current weather 
+    in Leeuwarden (NL) using the Weather API.
     It gets updated every 10 minutes.
 
     Returns
@@ -68,18 +69,21 @@ def update_weather():
     root.after(600000, update_weather)  # Update every 10 minutes
 
 
-weather_label = tk.Label(root, font=('lucida console', 20, 'bold'), foreground='white')
+weather_label = tk.Label(root, font=('lucida console', 20, 'bold'), 
+                         foreground='white')
 weather_label.pack(anchor='center', pady=20)
 
 # label widget to display time with display properties
-time_label = tk.Label(root, font=('lucida console', 40, 'bold'), foreground='white')
+time_label = tk.Label(root, font=('lucida console', 40, 'bold'), 
+                      foreground='white')
 time_label.pack(expand=True, anchor='center')
 
 
 def display_random_time():
     '''
-    This function takes no argument; it generates a random time string to be displayed in the GUI;
-    based on the generated string, it also changes the colour of the background.
+    This function takes no argument; it generates a random time string to
+    be displayed in the GUI; based on the generated string, 
+    it also changes the colour of the background.
 
     Returns
     -------
@@ -111,7 +115,8 @@ def display_random_time():
     weather_label.configure(bg=gradient_color)
 
 
-random_time_button = tk.Button(root, text='Get Random Time', command=display_random_time)
+random_time_button = tk.Button(root, text='Get Random Time',
+                               command=display_random_time)
 random_time_button.pack(pady=20)
 
 current_time_button = tk.Button(root, text='Current Time', command=time)
@@ -119,7 +124,8 @@ current_time_button.pack(pady=20)
 
 # language buttons that will speak the in the selected language when called
 eng_icon = tk.PhotoImage(file="eng_icon.gif")
-english_button = tk.Button(root, image=eng_icon, height=25, width=100, command=speak_time_in_english)
+english_button = tk.Button(root, image=eng_icon, height=25,
+                           width=100, command=speak_time_in_english)
 english_button.image = eng_icon
 english_button.pack(pady=20)
 
@@ -127,16 +133,19 @@ english_button.pack(pady=20)
 # mandarin_button.pack()
 
 ita_icon = tk.PhotoImage(file = r"ita_icon.gif")
-italian_button = tk.Button(root, image=ita_icon, borderwidth=0, height= 25, width=100, command=speak_time_in_italian)
+italian_button = tk.Button(root, image=ita_icon, borderwidth=0, height= 25,
+                           width=100, command=speak_time_in_italian)
 italian_button.pack(pady=20)
 
 de_icon = tk.PhotoImage(file="de_icon.gif")
-german_button = tk.Button(root, image=de_icon, borderwidth=0, height=25, width=100, command=speak_time_in_german)
+german_button = tk.Button(root, image=de_icon, borderwidth=0, height=25,
+                          width=100, command=speak_time_in_german)
 german_button.image = de_icon
 german_button.pack(pady=20)
 
 lat_icon = tk.PhotoImage(file="lat_icon.gif")
-latin_button = tk.Button(root, image=lat_icon, height=25, width=100, command=speak_time_in_latin)
+latin_button = tk.Button(root, image=lat_icon, height=25, 
+                         width=100, command=speak_time_in_latin)
 latin_button.image = lat_icon
 latin_button.pack(pady=20)
 
