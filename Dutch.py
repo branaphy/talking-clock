@@ -1,9 +1,9 @@
 # This code contains logic related to the linguistic rules of telling time in Dutch.
 import os
 
-import pygame
+# import pygame
 
-from helpers import get_current_time
+from helpers import get_current_time, play_audio
 
 
 # Authors: Alice Vanni, Amber Lankheet, Brandi Hongell, Jingxuan Yue, Wenjun Meng
@@ -36,7 +36,7 @@ def speak_time_in_dutch():
         if 13 <= int(minute) <=17:
             audio_files.append(os.path.join(audio_folder, "quarter_past_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{hour}_falling_nl.wav"))
-        elif int(minute) == '30':
+        elif int(minute) == 30:
             audio_files.append(os.path.join(audio_folder, "half_nl.wav"))
             #adding +1 because the telling time is plus the next hour, also two digits are required in the audio file
             audio_files.append(os.path.join(audio_folder, f"{int(hour) + 1:02d}_falling_nl.wav"))
@@ -84,15 +84,16 @@ def speak_time_in_dutch():
     #play audio file
     # To do this, you can just use the play_audio() funtion Brandi wrote in the helpers file, it takes the audio_file as the argument (- Alice)
     for audio_file in audio_files:
-        pygame.mixer.init()
-        pygame.mixer.music.load(audio_file)
-        pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
+        play_audio(audio_file)
+        # pygame.mixer.init()
+        # pygame.mixer.music.load(audio_file)
+        # pygame.mixer.music.play()
+        # while pygame.mixer.music.get_busy():
+        #     pygame.time.Clock().tick(10)
 
 
-if __name__ == '__main__':
-   speak_time_in_dutch()
+# if __name__ == '__main__':
+#    speak_time_in_dutch()
 
 
 
