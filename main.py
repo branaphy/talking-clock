@@ -17,7 +17,9 @@ hour_colors = ['#FF0000', '#FF7F00', '#FFFF00', '#7FFF00', '#00FF00', '#00FF7F',
 
 root = tk.Tk()
 root.title("Multilingual Talking Clock")
-root.geometry("700x650+300+120")
+screen_height = root.winfo_screenheight()
+x = ((root.winfo_screenwidth()) - screen_height) // 2
+root.geometry(f"500x{screen_height}+{x}+0")
 
 
 # define function to fetch current hour and minute, update display time and bg color according to time
@@ -100,8 +102,6 @@ def choose_weather_icon(weather_string):
     '''
     weather_list = ['sun', 'cloud', 'rain', 'mist', 'snow']
     for i in weather_list:
-        print(i)
-        print(weather_string)
         if weather_string.find(i)!=-1:
             return i
     return 'general'
@@ -147,6 +147,7 @@ def display_random_time():
     root.configure(bg=gradient_color)
     time_label.configure(bg=gradient_color)
     weather_label.configure(bg=gradient_color)
+    weather_icon_label.configure(bg=gradient_color)
 
 
 random_time_button = tk.Button(root, text='Get Random Time',
