@@ -26,7 +26,7 @@ def speak_time_in_italian():
         # Select the prosody for the minutes
         minute_prosody = "falling" if (0 <= int(minute) <= 30) else "rising"
         # Select the audio file for minutes
-        if int(minute) > 35:
+        if int(minute) >= 35:
             if len(str(60-int(minute))) == 1:
                 minute = "0" + str(60-int(minute))
                 minute_audio = f"ItalianAudio/{minute}_{minute_prosody}_it.wav"
