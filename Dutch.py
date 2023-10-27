@@ -32,8 +32,11 @@ def speak_time_in_dutch():
     audio_files.append(os.path.join(audio_folder, "it_is_nl.wav"))
 
     #then looking at the minutes and choosing the right file.
+    # Adding this to round the minute to the closest multiple of 5, then
+    # you can also simplify the if statements if you want (- Alice)
+    minute = round(int(minute) / 5) * 5
     if minute != '00':
-        if 13 <= int(minute) <=17:
+        if 13 <= int(minute) <=17: # e.g. this could be int(minute) == 15 now that there is the round() function (- Alice)
             audio_files.append(os.path.join(audio_folder, "quarter_past_nl.wav"))
             audio_files.append(os.path.join(audio_folder, f"{hour}_falling_nl.wav"))
         elif int(minute) == 30:
