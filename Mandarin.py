@@ -20,7 +20,7 @@ def speak_time_in_mandarin():
     # Create a list of audio files to be played
     audio_files = []
     # Add "its_am" or "its_pm" audio
-    audio_files.append(os.path.join(audio_folder, "its_am.wav" if ampm == "am" else "its_pm.wav"))
+    audio_files.append(os.path.join(audio_folder, "its_am.wav" if ampm == "AM" else "its_pm.wav"))
     if minute != '00':
         # Add hour audio
         audio_files.append(os.path.join(audio_folder, f"{hour}hour.wav"))
