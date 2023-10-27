@@ -82,6 +82,7 @@ def speak_time_in_dutch():
 
 
     #play audio file
+    # To do this, you can just use the play_audio() funtion Brandi wrote in the helpers file, it takes the audio_file as the argument (- Alice)
     for audio_file in audio_files:
         pygame.mixer.init()
         pygame.mixer.music.load(audio_file)
