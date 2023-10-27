@@ -22,17 +22,13 @@ def speak_time_in_mandarin():
     # Add "its_am" or "its_pm" audio
     audio_files.append(os.path.join(audio_folder, "its_am.wav" if ampm == "AM" else "its_pm.wav"))
     if minute != '00':
-        # Add hour audio
+        # Add hour and minute audio
         audio_files.append(os.path.join(audio_folder, f"{hour}hour.wav"))
         audio_files.append(os.path.join(audio_folder, f"{minute}_m.wav"))
     else:
-        # Add minute audio
+        # Add hour audio
         audio_files.append(os.path.join(audio_folder, f"{hour}hour.wav"))
         audio_files.append(os.path.join(audio_folder, "integer.wav"))
     # Play the list of audio files
     for audio_file in audio_files:
-        pygame.mixer.init()
-        pygame.mixer.music.load(audio_file)
-        pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
+        play_audio(audio_file)
