@@ -8,7 +8,7 @@ from Mandarin import speak_time_in_mandarin
 from Italian import speak_time_in_italian
 from German import speak_time_in_german
 from Latin import speak_time_in_latin
-# from Dutch import speak_time_in_dutch
+from Dutch import speak_time_in_dutch
 from Weather import get_weather
 from helpers import get_current_time, compute_gradient_color, random_time
 
@@ -48,6 +48,7 @@ def time():
     root.configure(bg=gradient_color)
     time_label.configure(bg=gradient_color)
     weather_label.configure(bg=gradient_color)
+    weather_icon_label.configure(bg=gradient_color)
 
     time_label.config(text=f"{hour}:{minute} {am_or_pm}")
     # time_label.after(10000, time)
@@ -80,6 +81,37 @@ time_label = tk.Label(root, font=('lucida console', 40, 'bold'),
                       foreground='white')
 time_label.pack(expand=True, anchor='center')
 
+def choose_weather_icon(weather_string):
+    '''
+    This function takes a weather string as its only argument and choose
+    the appropriate icon based on the current weather. 
+    If no appropriate icon is found, it chooses a general one.
+
+    Parameters
+    ----------
+    weather_label : TYPE
+        DESCRIPTION.
+
+    Returns
+    -------
+    TYPE
+        DESCRIPTION.
+
+    '''
+    weather_list = ['sun', 'cloud', 'rain', 'mist', 'snow']
+    for i in weather_list:
+        print(i)
+        print(weather_string)
+        if weather_string.find(i)!=-1:
+            return i
+    return 'general'
+
+weather = choose_weather_icon(get_weather('Leeuwarden', "584eb395bcf45a34c7ec7511b7d82c25"))
+weather_icon = tk.PhotoImage(file=f"{weather}.png")
+# label widget to show the weather icon based on the previous function
+weather_icon_label = tk.Label(root, image=weather_icon, height=100,
+                           width=100)
+weather_icon_label.pack(anchor='center', pady=20)
 
 def display_random_time():
     '''
