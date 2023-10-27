@@ -19,13 +19,11 @@ def speak_time_in_italian():
 
     '''
     hour, minute, ampm = get_current_time()
-    try:
-        # First, select the prosody for the minutes
-        minute_prosody = "falling" if (0 <= int(minute) <= 37 
-                                       or 58 <= int(minute) <= 59) else "rising"
+     try:
         # Select the closest multiple of 5 for the minutes
-        minute = round(int(minute) / 5) * 5
-        minute = "0" + str(minute) if len(str(minute)) == 1 else minute
+        minute = format(round(int(minute) / 5) * 5, '02')
+        # Select the prosody for the minutes
+        minute_prosody = "falling" if (0 <= int(minute) <= 30) else "rising"
         # Select the audio file for minutes
         if int(minute) > 35:
             if len(str(60-int(minute))) == 1:
