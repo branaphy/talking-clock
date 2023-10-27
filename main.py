@@ -19,7 +19,7 @@ root = tk.Tk()
 root.title("Multilingual Talking Clock")
 screen_height = root.winfo_screenheight()
 x = ((root.winfo_screenwidth()) - screen_height) // 2
-root.geometry(f"500x{screen_height}+{x}+0")
+root.geometry(f"500x{(screen_height)-75}+{x}+0")
 
 
 # define function to fetch current hour and minute, update display time and bg color according to time
