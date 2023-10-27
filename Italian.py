@@ -18,8 +18,9 @@ def speak_time_in_italian():
     This function does not return a value; it plays audio to speak the time.
 
     '''
-    hour, minute, ampm = get_current_time()
-     try:
+    #hour, minute, ampm = get_current_time()
+    hour, minute, ampm = ['12', '24', 'pm']
+    try:
         # Select the closest multiple of 5 for the minutes
         minute = format(round(int(minute) / 5) * 5, '02')
         # Select the prosody for the minutes
