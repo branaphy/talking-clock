@@ -157,13 +157,13 @@ current_time_button = tk.Button(root, text='Current Time', command=time)
 current_time_button.pack(pady=20)
 
 # language buttons that will speak the in the selected language when called
-eng_icon = tk.PhotoImage(file="eng_icon.gif")
+eng_icon = tk.PhotoImage(file="icons\eng_icon.gif")
 english_button = tk.Button(root, image=eng_icon, height=25,
                            width=100, command=speak_time_in_english)
 english_button.image = eng_icon
 english_button.pack(pady=20)
 
-chn_icon = tk.PhotoImage(file="chn_icon.png")
+chn_icon = tk.PhotoImage(file="icons\chn_icon.png")
 mandarin_button = tk.Button(root, image=chn_icon, height=25,
                            width=100, command=speak_time_in_mandarin)
 mandarin_button.pack(pady=20)
