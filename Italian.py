@@ -67,7 +67,7 @@ def speak_time_in_italian():
                 play_audio(audio)
 
     except Exception as italian_error:
-        print(f"An error occurred in speak_time_in_dutch: {italian_error}")
+        print(f"An error occurred in speak_time_in_italian: {italian_error}")
         # Create a tts object in Italian to speak the error
         # It will say "I'm sorry, an error occurred" in Italian
         ita_tts = gTTS(text="Mi dispiace, si è verificato un errore", lang="it", slow=False)
