@@ -1,10 +1,16 @@
 # A Talking Clock created by Alice Vanni, Amber Lankheet, Brandi Hongell, Jingxuan Yue, and Wenjun Meng
 
 ## Project Description
+This is a multilingual talking clock developed for a combined assignment in the Programming and Introduction to Voice Technology courses as a part of the MSc Voice Technology program at Rijksuniversiteit Groningen - Campus Fryslân. The clock speaks the time aloud in 6 languages: Dutch, American English, Italian, Mandarin Chinese, German, and Latin. The German and Latin voices are synthesized voices, and the remaining voices are spoken by native speakers. Each language is spoken in its own respective linguistic rules for telling time. 
 
 ## Installation Requirements
+Installation of `Python 3.6` is minimally required, however, installation of `Python 3.11` is recommended. Python can be downloaded from the following link: https://www.python.org/downloads/
 
 ## Installation Instructions
+1. Click on the green `Code` button at the top of the repository, then click `Download ZIP`.
+2. Extract the ZIP to the location where you want to install it on your computer.
+3. Open the terminal/command prompt and navigate to the file path of the extracted ZIP.
+4. Run `pip install -r requirements.txt` to install the dependencies required.
 
 ## How to Run the Program
 
