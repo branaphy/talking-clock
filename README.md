@@ -23,12 +23,13 @@ Installation of `Python 3.6` is minimally required, however, installation of `Py
 - Latin
 
 ## Linguistic Rules for Telling Time
-### Dutch
 
+### Dutch
 In Dutch, whole hours are quite similar to English; instead of using the word 'o'clock', "*uur*" is used which means 'hour'. The use of 'half past' is a bit different compared to English. The use of "*half*" is actually the next hour minus half an hour, for example half past 1 is in Dutch "*half 2*".
 'A quarter to' and 'a quarter past' are used the same compared to English, a quarter past 1, is "*kwart over 1*" and a quarter to is "*kwart voor*". 
 Minutes before a round hour are used in this way: 60 is substracted by the minutes of the current time, it would be like this: "*Het is 8 voor 9*", which can be phrased like: 'It is 8 to 9' (It is 8:52). This can also be used after an whole hour. After a round hour, 0 is added by the minutes of the current time: "*Het is 5 over 3*", 'It is 5 past 3'. 
 For half hours this is system is also used but then "*half*" is added. Remember when "*half*" is used, the next hour is used for telling time: "*Het is 10 over half 4*". The literal translation in English would be: 'It is 10 past half past 3' (It is 3:40). And before an half hour, for example: "*Het is 5 voor half 2*", the literal translation would be: 'It is 5 to half past 1' (It is 1:25). Usually, a maximum of 10 minutes can be used, if it is 3:13, it would be rounded to 3:15 or 3:12 would be rounded to 3:10. There are not really strict requirements for this. Some people might say 'it is 12 over', but according to some Dutch sources the rounding system is mostly used.   
+We added prosody to the audio files to make it sound more natural, because at the end of a sentence, the pitch will fall down. When the numbers are in the middle of the sentence, the pitch will go up, resulting in a raising pitch.  
 
 
 
