@@ -28,6 +28,9 @@ For half hours this is system is also used but then "*half*" is added. Remember 
 
 
 ### American English
+Speaking time in American English, at its base level, is very simple and straightforward. If it is the top of the hour, one would say: "It is (hour) o'clock a.m./p.m. For example, at 5:00 p.m., the time would be read as "It is 5 o'clock p.m. When minutes are involved, the time is read as: "It is (hour) (minute) a.m./p.m.  For example, 5:21 p.m. would be read as: "It is five twenty-one p.m." The only thing to note when reading minutes is that minutes 01-09 are read as "oh (minute)". For example, 5:06 p.m. would be read as "It is five oh six p.m."
+
+There are some short form ways of telling time in American English, such as 12:00 a.m. being "midnight" and 12:00 p.m. being "noon". Additionally, Americans often use terms such as "half past", which indicates 30 minutes over the current hour. For example, 5:30 p.m. could be read as: "half past five". Similarly, Americans often use "quarter till" as a way to indicate 15 minutes until the next hour. For example, 6:45 p.m. could be read as "quarter till 7".
 
 ### Italian
 The Italian language has a telling time system similar to English, usually telling first the hour and then the minutes, and having expressions to indicate the half and the quarters of the hours. The former is expressed through the word “*mezzo*” or “*mezza*”, depending on the variety, while the former is translated to “*un quarto*”. Hours are usually indicated using simple numbers, except for 01:00 a.m./p.m. for which is not used the standard form of the cardinal number "*uno*", but the female form “*una*”. Additionally, we decided not to use the number to indicate 12:00 a.m./p.m., but the more spread expressions “*mezzogiorno*” (midday) and “*mezzanotte*” (midnight).
