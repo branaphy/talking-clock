@@ -91,6 +91,7 @@ weather_label = tk.Label(root, font=('lucida console', 20, 'bold'),
                          foreground='white')
 weather_label.pack(anchor='center', pady=20)
 
+# label widget to display time with display properties
 time_label = tk.Label(root, font=('lucida console', 40, 'bold'),
                       foreground='white')
 time_label.pack(expand=True, anchor='center')
@@ -189,36 +190,30 @@ current_time_button = tk.Button(root, text='Current Time', command=time)
 current_time_button.pack(pady=20)
 
 # language buttons that will speak the in the selected language when called
-eng_icon = tk.PhotoImage(file="icons/eng_icon.gif")
-english_button = tk.Button(root, image=eng_icon, height=25,
-                           width=100, command=speak_time_in_english)
+eng_icon = tk.PhotoImage(file="icons/eng_icon.png")
+english_button = tk.Button(root, image=eng_icon, borderwidth=0, command=speak_time_in_english)
 english_button.image = eng_icon
 english_button.pack(pady=20)
 
 chn_icon = tk.PhotoImage(file="icons/chn_icon.png")
-mandarin_button = tk.Button(root, image=chn_icon, height=25,
-                            width=100, command=speak_time_in_mandarin)
+mandarin_button = tk.Button(root, image=chn_icon, borderwidth=0, command=speak_time_in_mandarin)
 mandarin_button.pack(pady=20)
 
-ita_icon = tk.PhotoImage(file=r"icons/ita_icon.gif")
-italian_button = tk.Button(root, image=ita_icon, borderwidth=0, height=25,
-                           width=100, command=speak_time_in_italian)
+ita_icon = tk.PhotoImage(file=r"icons/ita_icon.png")
+italian_button = tk.Button(root, image=ita_icon, borderwidth=0, command=speak_time_in_italian)
 italian_button.pack(pady=20)
 
 nl_icon = tk.PhotoImage(file="icons/nl_icon.png")
-dutch_button = tk.Button(root, image=nl_icon, height=25,
-                         width=100, command=speak_time_in_dutch)
-dutch_button.pack()
+dutch_button = tk.Button(root, image=nl_icon, borderwidth=0, command=speak_time_in_dutch)
+dutch_button.pack(pady=20)
 
-de_icon = tk.PhotoImage(file="icons/de_icon.gif")
-german_button = tk.Button(root, image=de_icon, borderwidth=0, height=25,
-                          width=100, command=speak_time_in_german)
+de_icon = tk.PhotoImage(file="icons/de_icon.png")
+german_button = tk.Button(root, image=de_icon, borderwidth=0, command=speak_time_in_german)
 german_button.image = de_icon
 german_button.pack(pady=20)
 
 lat_icon = tk.PhotoImage(file="icons/lat_icon.png")
-latin_button = tk.Button(root, image=lat_icon, height=25,
-                         width=100, command=speak_time_in_latin)
+latin_button = tk.Button(root, image=lat_icon, borderwidth=0, width=64, height=43, command=speak_time_in_latin)
 latin_button.image = lat_icon
 latin_button.pack(pady=20)
 
