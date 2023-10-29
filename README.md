@@ -6,6 +6,8 @@ This is a multilingual talking clock developed for a combined assignment in the 
 ## Installation Requirements
 Installation of `Python 3.6` is minimally required, however, installation of `Python 3.11` is recommended. Python can be downloaded from the following link: https://www.python.org/downloads/
 
+A stable internet connection is required to run the program, as the program uses an API call to display weather information.
+
 ## Installation Instructions
 1. Click on the green `Code` button at the top of the repository, then click `Download ZIP`.
 2. Extract the ZIP to the location where you want to install it on your computer.
@@ -19,7 +21,7 @@ The clock displays the following information: current weather conditions, curren
 
 To speak the current time, press the button at the bottom of the screen which corresponds to the desired language.
 
-At the top of the clock there is a toggle for dark mode. Dark mode is not available while using the `Display Random Time` button, as the purpose of the `Display Random Time` button is to demonstrate the background gradient. Additionally, random times cannot be spoken, as they only affect the GUI (there is no value stored). To return the clock to its orignal state, press the `Display Current Time` button. 
+At the top of the clock there is a toggle for dark mode. Dark mode is not available while using the `Display Random Time` button, as the purpose of the `Display Random Time` button is to demonstrate the background gradient. Additionally, random times cannot be spoken, as they only affect the GUI (there is no value stored). To return the clock to its original state, press the `Display Current Time` button. 
 
 ## Supported Languages
 - Dutch
