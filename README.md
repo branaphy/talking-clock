@@ -68,3 +68,7 @@ For both Latin and German we used the gTTS package and we opted for a very simpl
 
 ## GDPR Compliance
 The recordings for American English, Dutch, Italian and Mandarin Chinese have been done complying to the General Data Protection Regulation. The five participants have signed an informed consent form that is stored in the folder "GDPR_informed_consent", together with the empty template. All the recordings used have been pseudonimysed to guarantee the highest degree of privacy possible.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
