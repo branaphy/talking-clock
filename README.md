@@ -13,6 +13,13 @@ Installation of `Python 3.6` is minimally required, however, installation of `Py
 4. Run `pip install -r requirements.txt` to install the dependencies required.
 
 ## How to Run the Program
+While in the same directory as the extracted ZIP, run `python main.py` in the terminal. This will open the GUI for the talking clock program.
+
+The clock displays the following information: current weather conditions, current time, and current date. The background color of the application is a constantly changing gradient on a 12 hour cycle. It changes with each minute.
+
+To speak the current time, press the button at the bottom of the screen which corresponds to the desired language.
+
+At the top of the clock there is a toggle for dark mode. Dark mode is not available while using the `Display Random Time` button, as the purpose of the `Display Random Time` button is to demonstrate the background gradient. Additionally, random times cannot be spoken, as they only affect the GUI (there is no value stored). To return the clock to its orignal state, press the `Display Current Time` button. 
 
 ## Supported Languages
 - Dutch
