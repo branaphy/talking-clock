@@ -226,15 +226,17 @@ def display_random_time():
         messagebox.showerror("Error", f"An error occurred: {str(rand_error)}")
 
 
-random_time_button = tk.Button(root, text='Display Random Time', command=display_random_time)
+random_time_button = tk.Button(root, text='Display Random Time', command=display_random_time,
+                               font=('lucida console', 10))
 random_time_button.grid(row=5, column=0, columnspan=3, pady=20, padx=5, sticky='ew')
 
-current_time_button = tk.Button(root, text='Display Current Time', command=time)
+current_time_button = tk.Button(root, text='Display Current Time', command=time,
+                                font=('lucida console', 10))
 current_time_button.grid(row=5, column=3, columnspan=3, pady=20, padx=5, sticky='ew')
 
 dark_icon = tk.PhotoImage(file="icons/moon.png")
 dark_mode_switch = tk.Checkbutton(root, text="Dark Mode", variable=dark_mode_var, relief="ridge",
-                                  command=toggle_dark_mode)
+                                  command=toggle_dark_mode, font=('lucida console', 10))
 dark_mode_switch.grid(row=0, column=0, columnspan=6, pady=5)
 
 try:
