@@ -161,7 +161,8 @@ def choose_weather_icon(weather_string):
         'cloud': 'cloud',
         'rain': 'rain',
         'mist': 'mist',
-        'snow': 'snow'
+        'snow': 'snow',
+        'drizzle' : 'drizzle'
     }
     return next((weather_map[key] for key in weather_map if key in weather_string), 'general')
 
