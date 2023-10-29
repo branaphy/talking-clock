@@ -1,9 +1,7 @@
-# The starting point of execution for the Talking Clock. This contains the code pertaining the GUI.
-
 # Authors: Alice Vanni, Amber Lankheet, Brandi Hongell, Jingxuan Yue, Wenjun Meng
 
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, DISABLED, NORMAL
 
 from English import speak_time_in_english
 from Mandarin import speak_time_in_mandarin
@@ -14,68 +12,80 @@ from Dutch import speak_time_in_dutch
 from Weather import get_weather
 from helpers import get_current_time, compute_gradient_color, random_time
 
-hour_colors = ['#FF0000', '#FF7F00', '#FFFF00', '#7FFF00', '#00FF00', '#00FF7F',
-               '#00FFFF', '#007FFF', '#0000FF', '#7F00FF', '#FF00FF', '#FF007F']
+hour_colors = ['#FFFFCC', '#FFCC99', '#FFCCCC', '#FF99CC', '#FFCCFF', '#CC99FF', '#CCCCFF', '#99CCFF', '#CCFFFF',
+               '#99FFCC', '#CCFFCC', '#CCFF99']
 
 root = tk.Tk()
 root.title("Multilingual Talking Clock")
-screen_height = root.winfo_screenheight()
-x = ((root.winfo_screenwidth()) - screen_height) // 2
-root.geometry(f"500x{screen_height - 75}+{x}+0")
+
+clock_width = 520
+clock_height = 500
+
+# Centering the window on the screen:
+x_position = (root.winfo_screenwidth() - clock_width) // 2
+y_position = (root.winfo_screenheight() - clock_height) // 2
+
+root.geometry(f"{clock_width}x{clock_height}+{x_position}+{y_position}")
+
+weather_label = tk.Label(root, font=('lucida console', 16, 'bold'), foreground='black')
+weather_label.grid(row=0, column=0, columnspan=6, pady=20, sticky='n')
+
+time_label = tk.Label(root, font=('lucida console', 40, 'bold'), foreground='black')
+time_label.grid(row=1, column=0, columnspan=6, pady=20, sticky='n')
+
+eng_icon = tk.PhotoImage(file="icons/eng_icon.png")
+english_button = tk.Button(root, image=eng_icon, borderwidth=0, command=speak_time_in_english)
+english_button.grid(row=4, column=0, padx=10, pady=20)
+
+chn_icon = tk.PhotoImage(file="icons/chn_icon.png")
+mandarin_button = tk.Button(root, image=chn_icon, borderwidth=0, command=speak_time_in_mandarin)
+mandarin_button.grid(row=4, column=1, padx=10, pady=20)
+
+ita_icon = tk.PhotoImage(file=r"icons/ita_icon.png")
+italian_button = tk.Button(root, image=ita_icon, borderwidth=0, command=speak_time_in_italian)
+italian_button.grid(row=4, column=2, padx=10, pady=20)
+
+nl_icon = tk.PhotoImage(file="icons/nl_icon.png")
+dutch_button = tk.Button(root, image=nl_icon, borderwidth=0, command=speak_time_in_dutch)
+dutch_button.grid(row=4, column=3, padx=10, pady=20)
+
+de_icon = tk.PhotoImage(file="icons/de_icon.png")
+german_button = tk.Button(root, image=de_icon, borderwidth=0, command=speak_time_in_german)
+german_button.grid(row=4, column=4, padx=10, pady=20)
+
+lat_icon = tk.PhotoImage(file="icons/lat_icon.png")
+latin_button = tk.Button(root, image=lat_icon, text="Latin", borderwidth=0, width=64, height=43,
+                         command=speak_time_in_latin)
+latin_button.grid(row=4, column=5, padx=10, pady=20)
 
 
-# define function to fetch current hour and minute, update display time and bg color according to time
 def time():
-    """
-    This function fetches the current hour and minute and displays
-    time and background colour according to the time fetched.
-    It takes no arguments.
-
-    Returns
-    -------
-    None.
-
-    This function does not return a value, it configures the GUI.
-    """
     try:
         hour, minute, am_or_pm = get_current_time()
-
-        # Determine the start and end colors
-        start_color = hour_colors[int(hour) - 1]  # Subtract 1 because list is 0-indexed
-        end_color = hour_colors[int(hour) % 12]  # Use modulo to loop back to 0 after 11
-
-        # Compute the gradient ratio based on the current minute
+        start_color = hour_colors[int(hour) - 1]
+        end_color = hour_colors[int(hour) % 12]
         ratio = float(minute) / 60.0
-
-        # Calculate the gradient color for the current minute
         gradient_color = compute_gradient_color(start_color, end_color, ratio)
-
         root.configure(bg=gradient_color)
         time_label.configure(bg=gradient_color)
         weather_label.configure(bg=gradient_color)
         weather_icon_label.configure(bg=gradient_color)
-
         time_label.config(text=f"{hour}:{minute} {am_or_pm}")
 
+        english_button.config(state=NORMAL)
+        mandarin_button.config(state=NORMAL)
+        italian_button.config(state=NORMAL)
+        dutch_button.config(state=NORMAL)
+        german_button.config(state=NORMAL)
+        latin_button.config(state=NORMAL)
+
     except Exception as time_error:
-        # Show the error as a pop-up message
         messagebox.showerror("Error", f"An error occurred: {str(time_error)}")
     finally:
-        time_label.after(60000, time) # Update once per minute
+        time_label.after(60000, time)
 
 
 def update_weather():
-    """
-    This function takes no arguments, it retrieves the current weather
-    in Leeuwarden (NL) using the Weather API.
-    It gets updated every 10 minutes.
-
-    Returns
-    -------
-    None.
-
-    This function does not return a value, it has consequences on the GUI.
-    """
     try:
         city = "Leeuwarden"
         current_weather = get_weather(city, "584eb395bcf45a34c7ec7511b7d82c25")
@@ -84,40 +94,13 @@ def update_weather():
         weather_label.config(text="Weather update failed.")
         print(f"Error updating weather: {weather_error}")
     finally:
-        root.after(600000, update_weather)  # Update every 10 minutes
-
-
-weather_label = tk.Label(root, font=('lucida console', 20, 'bold'),
-                         foreground='white')
-weather_label.pack(anchor='center', pady=20)
-
-# label widget to display time with display properties
-time_label = tk.Label(root, font=('lucida console', 40, 'bold'),
-                      foreground='white')
-time_label.pack(expand=True, anchor='center')
+        root.after(600000, update_weather)
 
 
 def choose_weather_icon(weather_string):
-    """
-    This function takes a weather string as its only argument and chooses
-    the appropriate icon based on the current weather.
-    If no appropriate icon is found, it chooses a general one.
-
-    Parameters
-    ----------
-    weather_string : str
-        String containing a description of the weather.
-
-    Returns
-    -------
-    str
-        Name of the icon to use based on the weather description.
-    """
     if not isinstance(weather_string, str):
         print("Error: Invalid weather_string input in choose_weather_icon.")
         return 'general'
-
-    # dictionary for direct mapping icons
     weather_map = {
         'sun': 'sun',
         'cloud': 'cloud',
@@ -125,33 +108,19 @@ def choose_weather_icon(weather_string):
         'mist': 'mist',
         'snow': 'snow'
     }
-
-    # Use dictionary comprehension to find the key
     return next((weather_map[key] for key in weather_map if key in weather_string), 'general')
 
 
 try:
     weather = choose_weather_icon(get_weather('Leeuwarden', "584eb395bcf45a34c7ec7511b7d82c25"))
     weather_icon = tk.PhotoImage(file=f"icons/{weather}.png")
-    # label widget to show the weather icon based on the previous function
     weather_icon_label = tk.Label(root, image=weather_icon, height=100, width=100)
-    weather_icon_label.pack(anchor='center', pady=20)
+    weather_icon_label.grid(row=2, column=0, columnspan=6, pady=20)
 except Exception as e:
     print(f"Error while fetching and displaying weather icon: {e}")
 
 
 def display_random_time():
-    """
-    This function takes no argument; it generates a random time string to
-    be displayed in the GUI; based on the generated string,
-    it also changes the colour of the background.
-
-    Returns
-    -------
-    None.
-
-    This function does not return a value, it has effects on the GUI.
-    """
     try:
         time_str = random_time()  # Get a random time string
         time_label.config(text=time_str)  # Display the random time
@@ -177,53 +146,28 @@ def display_random_time():
         weather_label.configure(bg=gradient_color)
         weather_icon_label.configure(bg=gradient_color)
 
+        # Disable speaking buttons -- this function solely affects GUI to show the color changing effects
+        english_button.config(state=DISABLED)
+        mandarin_button.config(state=DISABLED)
+        italian_button.config(state=DISABLED)
+        dutch_button.config(state=DISABLED)
+        german_button.config(state=DISABLED)
+        latin_button.config(state=DISABLED)
+
     except Exception as rand_error:
-        # Show the error as a pop-up message
         messagebox.showerror("Error", f"An error occurred: {str(rand_error)}")
 
 
-random_time_button = tk.Button(root, text='Get Random Time',
-                               command=display_random_time)
-random_time_button.pack(pady=20)
+random_time_button = tk.Button(root, text='Display Random Time', command=display_random_time)
+random_time_button.grid(row=3, column=0, columnspan=3, pady=20, padx=5, sticky='ew')
 
-current_time_button = tk.Button(root, text='Current Time', command=time)
-current_time_button.pack(pady=20)
-
-# language buttons that will speak the in the selected language when called
-eng_icon = tk.PhotoImage(file="icons/eng_icon.png")
-english_button = tk.Button(root, image=eng_icon, borderwidth=0, command=speak_time_in_english)
-english_button.image = eng_icon
-english_button.pack(pady=20)
-
-chn_icon = tk.PhotoImage(file="icons/chn_icon.png")
-mandarin_button = tk.Button(root, image=chn_icon, borderwidth=0, command=speak_time_in_mandarin)
-mandarin_button.pack(pady=20)
-
-ita_icon = tk.PhotoImage(file=r"icons/ita_icon.png")
-italian_button = tk.Button(root, image=ita_icon, borderwidth=0, command=speak_time_in_italian)
-italian_button.pack(pady=20)
-
-nl_icon = tk.PhotoImage(file="icons/nl_icon.png")
-dutch_button = tk.Button(root, image=nl_icon, borderwidth=0, command=speak_time_in_dutch)
-dutch_button.pack(pady=20)
-
-de_icon = tk.PhotoImage(file="icons/de_icon.png")
-german_button = tk.Button(root, image=de_icon, borderwidth=0, command=speak_time_in_german)
-german_button.image = de_icon
-german_button.pack(pady=20)
-
-lat_icon = tk.PhotoImage(file="icons/lat_icon.png")
-latin_button = tk.Button(root, image=lat_icon, borderwidth=0, width=64, height=43, command=speak_time_in_latin)
-latin_button.image = lat_icon
-latin_button.pack(pady=20)
+current_time_button = tk.Button(root, text='Display Current Time', command=time)
+current_time_button.grid(row=3, column=3, columnspan=3, pady=20, padx=5, sticky='ew')
 
 try:
-    # call the weather function to initialize the weather label
     update_weather()
-    # call the time function to initialize the label
     time()
 except Exception as init_error:
     print(f"Error initializing: {init_error}")
 
-# main event loop for GUI
 root.mainloop()
