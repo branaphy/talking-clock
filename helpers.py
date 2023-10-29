@@ -5,6 +5,7 @@
 # Authors: Alice Vanni, Amber Lankheet, Brandi Hongell, Jingxuan Yue, Wenjun Meng
 
 from time import strftime
+from datetime import datetime
 import pygame
 import random
 
@@ -14,6 +15,10 @@ def get_current_time():
     minute = strftime('%M')  # Get minute in 00, 01, ... , 59 format
     am_or_pm = strftime('%p')  # Get AM or PM
     return hour, minute, am_or_pm  # Return hour and minute as strings
+
+
+def get_current_date():
+    return datetime.now().strftime('%B %d, %Y')
 
 
 def play_audio(file_path):
